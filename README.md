@@ -4,7 +4,7 @@
 
 ## Table of Contents
 
-- [WIP] [PostrgeSQL using docker](docs/postgresql-docker.md): setup a PostgreSQL database using Docker.
+- [PostrgeSQL using docker](docs/postgresql-docker.md): setup a PostgreSQL database using Docker.
 - [C# on Visual Studio Code](docs/csharp-on-vscode.md): setup your development environment for C# using Visual Studio Code.
 - [C# docs](docs/csharp-docs.md): create and host your documentation for your C# projects using DocFX.
 - [C# to PostgreSQL](docs/csharp-to-postgres.md): connect your C# application to a PostgreSQL database.
