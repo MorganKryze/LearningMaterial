@@ -19,7 +19,9 @@ This article will guide you through the process of creating a documentation for 
 - A code editor (e.g. Visual Studio Code, NeoVim, Notepad +, etc.)
 - A C# project
 
-## Install DocFX
+## Setup
+
+### Step 1: Install DocFX
 
 Ensure that you have dotnet (C#) installed by running:
 
@@ -33,7 +35,7 @@ Now, to install docfx, or update it, open any terminal and run the following com
 dotnet tool update -g docfx
 ```
 
-## Setup workspace
+### Step 2: Setup workspace
 
 We will assume that your project has a simple structure like this initially:
 
@@ -147,6 +149,8 @@ For a more convenient display, features and to target to the project, I recommen
 }
 ```
 
+### Step 3: [ Optional ] Update content
+
 > [!NOTE]
 > You may want to select the channel of the documentation you want to generate. For example, if you want to generate the documentation for the Debug or Release version only. Feel free to update `files` to Debug or Release and `TargetFramework` to your dotnet version(available in the `MyApp.csproj`).
 
@@ -177,7 +181,7 @@ dotnet build -c Debug
 dotnet build -c Release
 ```
 
-## Preview your docs
+### Step 4: Preview your docs
 
 Now, back on your terminal from the root, run the following command:
 
@@ -196,7 +200,7 @@ Your documentation is now available on <http://localhost:8080> if you want to se
 
 ## Customize your doc
 
-### Add sections
+### Step 1: Add sections
 
 By default, the only sections available are `Docs` and `Api Documentation`. You may want to add more sections to your documentation. To do so, you will have to do fe steps:
 
@@ -235,7 +239,7 @@ items:
     homepage: articles/index.md
 ```
 
-### Add pages
+### Step 2: Add pages
 
 Now that you know how to create new sections, to add pages you may just add markdown files to the sections folder, and add them to the `toc.yml` file. Here is an example of the `toc.yml` file:
 
@@ -274,7 +278,7 @@ items:
     href: how_to_publish.md
 ```
 
-### Markdown features support
+### Step 3: See Markdown features support
 
 DocFX supports a lot of markdown features. All of them are listed in the [official documentation](https://dotnet.github.io/docfx/spec/docfx_flavored_markdown.html).
 
@@ -299,7 +303,7 @@ To add a logo or favicon to your documentation, start by adding them into the as
 
 For both I recommend you using svg files so that the logo and favicon are scalable and will not lose quality.
 
-### Code documentation
+### Step 4: Add code documentation
 
 Coding in C#, you may be aware of the use of the `///` comments to document your code. This is a good practice to help other developers understand your code. DocFX will take these comments into account to generate accurate documentation. Please refer to the [official documentation](https://docs.microsoft.com/dotnet/csharp/programming-guide/xmldoc/xml-documentation-comments) for more information.
 
@@ -367,13 +371,13 @@ Now your documentation is ready to be generated in the section `API` in the gene
 
 ## Deploy the doc
 
-### GitHub Pages
+### Step 1: Setup GitHub Pages
 
 GitHub provides a service called GitHub Pages that allows you to host static websites directly from your repository. We will need to setup few things before deploying the documentation.
 
 First of all, go to your repository settings, then to the "Pages" section. Select "Deploy from branch", then select the branch "gh-pages" branch and the root folder. Then click on "Save". If you do not have a "gh-pages" branch, you will have to create one (it is better if it is empty at the beginning but it is not mandatory).
 
-### Deployment
+### Step 2: Deployment to web
 
 Then, you will have to create a new folder called `.github` at the root of your project. Inside this folder, create a new folder called `workflows`. Inside this folder, create a new file called `deploy_docs.yml`. This file will contain the workflow to generate and deploy the documentation on GitHub Pages.
 

@@ -14,7 +14,7 @@ This guide will help you set up your development environment for C# using Visual
 
 - A computer.
 
-## Install .NET SDK
+## Step 1: Install .NET SDK
 
 The .NET SDK is a free, open-source development platform for building many different types of applications. It includes the C# compiler, the .NET runtime, and the ASP.NET Core runtime.
 
@@ -26,7 +26,7 @@ The .NET SDK is a free, open-source development platform for building many diffe
 dotnet --version
 ```
 
-## Install Visual Studio Code
+## Step 2: Install Visual Studio Code
 
 Visual Studio Code is a free source code editor developed by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring.
 
@@ -70,7 +70,7 @@ brew install --cask visual-studio-code
 
 5. Click on `File` > `Auto Save` to enable the auto-save feature.
 
-## Install the C# extension
+## Step 3: Install the C# extension
 
 The C# extension for Visual Studio Code adds support for C# to Visual Studio Code, including features such as syntax highlighting, IntelliSense (code completion), and debugging.
 
@@ -108,6 +108,6 @@ Search for `Format Document` and set the keybinding to `Ctrl+S` (or `Cmd+S` on M
 
 Finally, open a C# file and press `Ctrl+S` (`Cmd+S` on MacOS) to format the document.
 
-## Resources
+## To go further
 
-- [To go further](https://code.visualstudio.com/Docs/languages/csharp)
+- [Official material](https://code.visualstudio.com/Docs/languages/csharp)
