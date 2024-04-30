@@ -1,7 +1,7 @@
 ---
 title: Create your project documentation
 author: Yann M. Vidamment (MorganKryze)
-description: This tutorial will let you create and host a static website for your documentation. The tool is developed for a C# project but can be used for any other project as the articles are written in markdown.
+description: This learning material will let you create and host a static website for your documentation. The tool is developed for a C# project but can be used for any other project as the articles are written in markdown.
 ---
 
 # Create your project documentation
@@ -11,7 +11,7 @@ description: This tutorial will let you create and host a static website for you
 This article will guide you through the process of creating a documentation for your C# project using the tool [DocFX](https://dotnet.github.io/docfx/). Documentation is key to help user understand how to use the tools you create. It is also a good way to show the quality of your work.
 
 > [!WARNING]
-> In this tutorial, we will assume that you have a basic knowledge of C# and that you have a project to document (even a simple console application).
+> In this learning material, we will assume that you have a basic knowledge of C# and that you have a project to document (even a simple console application).
 
 ## Prerequisites
 
