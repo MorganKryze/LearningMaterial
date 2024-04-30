@@ -10,6 +10,10 @@ description: This tutorial will help you set up your development environment for
 
 This guide will help you set up your development environment for C# using Visual Studio Code. It will guide you through the installation of the .NET SDK, Visual Studio Code, and the C# extension for a complete setup.
 
+## Prerequisites
+
+- A computer.
+
 ## Install .NET SDK
 
 The .NET SDK is a free, open-source development platform for building many different types of applications. It includes the C# compiler, the .NET runtime, and the ASP.NET Core runtime.
