@@ -15,6 +15,7 @@ Docker will be particularly convenient compared to a traditional installation of
 ## Prerequisites
 
 - A computer.
+- Preferably a code editor like Visual Studio Code.
 
 ## Step 1: Install Docker
 
@@ -61,7 +62,6 @@ DB_PORT=5432
 Finally add the `init.sql` file in the same directory with the following content:
 
 ```sql
-CREATE DATABASE mydatabase;
 \c mydatabase
 CREATE TABLE customer (id SERIAL PRIMARY KEY, name VARCHAR(50));
 INSERT INTO customer (name) VALUES ('Alice');
@@ -69,6 +69,14 @@ INSERT INTO customer (name) VALUES ('Bob');
 ```
 
 ### Quick explanation
+
+The files:
+
+- `docker-compose.yml`: is the main file. It defines the container configuration.
+- `.env`: contains the environment variables for the PostgreSQL container (name, user, password, port).
+- `init.sql`: is a SQL script that will be executed when the container starts. It creates a `customer` table and inserts two rows.
+
+The docker configuration:
 
 - `image: postgres:alpine`: means that we will run a PostgreSQL container in an `alpine` OS.
 - `restart`: if the container stops, will restart automatically.
@@ -92,32 +100,38 @@ This command will create and start the PostgreSQL container in the background. T
 docker ps
 ```
 
-You should see a postgres container running.
+You should see a postgres container running. At the end of the lines, you should see a section "NAMES" with the name of the container, I recommend you to copy it for the next step.
 
 ## Step 4: Access the PostgreSQL database
 
-If you have the tool `psql` installed on your machine, you can connect to the PostgreSQL database using the following command:
-
-```bash
-psql -h localhost -U postgres
-```
-
-Or instead:
+Now that the database is running, we will try to manually connect to it using the `psql` command-line tool. You can use the following command to connect to the PostgreSQL database:
 
 ```bash
 docker exec -it database-db-1 psql -U postgres
 ```
 
-## Step 5: Update data manually
+> [!WARNING]
+> Here, `database-db-1` is the name of the container, you should replace it with the name of your container if you did not name your working directory `database`.
 
-You can update the data in the database manually using the `psql` command-line tool. For example, you can insert a new customer into the `customer` table using the following command (after running `docker exec -it database-db-1 psql -U postgres`):
+Now that you are connected to the PostgreSQL database, you can run SQL queries. For example, you can list the databases using the following command:
+
+```sql
+\l
+```
+
+To check that your initial SQL script was executed, you can list the elements in the `customer` table. Start by connecting to the `mydatabase` database:
 
 ```sql
 \c mydatabase
-INSERT INTO customer (name) VALUES ('Charlie');
 ```
 
-## Step 6: Clean up
+Then list the elements in the `customer` table:
+
+```sql
+SELECT * FROM customer;
+```
+
+## Step 5: Clean up
 
 To stop and remove the PostgreSQL container, you can use the following command:
 
@@ -125,9 +139,11 @@ To stop and remove the PostgreSQL container, you can use the following command:
 docker-compose down
 ```
 
-However, to erase the persistent data, consider removing the `db` directory.
+However, to erase the persistent data, consider removing the `db` directory. Else, the data will be kept for the next time you start the container.
+
+Go through the steps if you update the `init.sql` file with new data.
 
 ## To go further
 
-- [PostgreSQL Docker Hub](https://hub.docker.com/_/postgres): official PostgreSQL image on Docker Hub.
+- [PostgreSQL commands](https://tomcam.github.io/postgres/): a list of PostgreSQL commands and good practices.
 - [Docker Compose](https://docs.docker.com/compose/): official documentation for Docker Compose.
