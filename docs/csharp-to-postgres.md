@@ -49,7 +49,17 @@ Then, create a new database and a table.
 
 ```sql
 CREATE DATABASE mydatabase;
+```
+
+Move to the new database.
+
+```sql
 \c mydatabase
+```
+
+Create a new table.
+
+```sql
 CREATE TABLE customer (id SERIAL PRIMARY KEY, name VARCHAR(50));
 ```
 
@@ -76,7 +86,8 @@ class Program
 }
 ```
 
-Replace `your_password` with the password you used to create the database.
+> [!WARNING]
+> Replace `your_password` with the password you used to create the database.
 
 ## Step 5: Run the application
 
