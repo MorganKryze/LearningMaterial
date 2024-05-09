@@ -36,8 +36,6 @@ Visual Studio Code is a free source code editor developed by Microsoft for Windo
 
 2. Run the installer and follow the instructions (Consider adding `Open with Code` action to Windows Explorer context menu).
 
-![Open With Code](../assets/img/png/vscode/open_with_code.png)
-
 3. Once installed, open Visual Studio Code.
 
 4. Click on `File` > `Auto Save` to enable the auto-save feature.
